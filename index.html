@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Сербский Урок 3 | Существительные</title>
+    <title>Сербский Урок 4 | Настоящее Время Глаголов</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -43,7 +43,19 @@
             background: radial-gradient(circle, rgba(147,51,234,0.1) 0%, rgba(15,23,42,0) 70%); 
             bottom: -100px; right: -100px; border-radius: 50%; pointer-events: none; z-index: -1;
         }
-        .btn-tap:active { transform: scale(0.95); opacity: 0.9; }
+        .selector-btn {
+            background-color: #1e293b;
+            border: 2px solid #475569;
+            color: #94a3b8;
+            transition: all 0.2s;
+        }
+        .selector-btn.active {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+        .selector-btn:active { transform: scale(0.95); }
     </style>
 </head>
 <body class="bg-grid min-h-screen pb-12">
@@ -53,161 +65,83 @@
 
     <header class="glass sticky top-0 z-50 py-4 px-4 md:px-8 border-b border-slate-700/50 flex justify-between items-center">
         <div>
-            <span class="text-xs uppercase tracking-widest text-purple-400 font-bold">Теория + Интерактив</span>
-            <h1 class="text-lg md:text-2xl font-extrabold text-white">Урок 3: Род и Число Существительных 🇷🇸</h1>
+            <span class="text-xs uppercase tracking-widest text-purple-400 font-bold">Теория + Спряжение</span>
+            <h1 class="text-lg md:text-2xl font-extrabold text-white">Урок 4: Настоящее Время Глаголов 🇷🇸</h1>
         </div>
     </header>
 
     <main class="w-full max-w-5xl mx-auto py-8 px-4 flex flex-col gap-10 md:gap-16">
 
-        <!-- 1. Введение: Рода в сербском -->
+        <!-- 1. Теория: Окончания -->
         <section>
             <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-2">Три Рода Существительных</h2>
-                <p class="text-sm md:text-xl text-slate-400">Всё почти как в русском! Определяем по окончанию слова.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-2">Общие окончания Презента</h2>
+                <p class="text-sm md:text-xl text-slate-400">В сербском языке все глаголы в настоящем времени имеют одинаковые личные окончания!</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                <!-- Мужской -->
-                <div class="bento-box p-6 md:p-8 border-t-4 border-t-blue-500">
-                    <span class="text-blue-400 font-bold uppercase text-xs tracking-wider">Мужской род</span>
-                    <h3 class="text-2xl font-extrabold text-white mt-2 mb-4">На согласную</h3>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-6">Слова, заканчивающиеся на согласную букву.</p>
-                    <div class="space-y-2">
-                        <div class="bg-slate-800/50 p-3 rounded-xl flex justify-between font-bold text-sm md:text-base">
-                            <span>Град</span><span class="text-blue-400">Город</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-3 rounded-xl flex justify-between font-bold text-sm md:text-base">
-                            <span>Прозор</span><span class="text-blue-400">Окно</span>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4 text-center">
+                <div class="bento-box p-4 border border-slate-700">
+                    <div class="text-blue-400 font-bold text-sm">Ја (Я)</div>
+                    <div class="text-3xl font-extrabold text-white mt-1">-М</div>
                 </div>
-
-                <!-- Женский -->
-                <div class="bento-box p-6 md:p-8 border-t-4 border-t-purple-500">
-                    <span class="text-purple-400 font-bold uppercase text-xs tracking-wider">Женский род</span>
-                    <h3 class="text-2xl font-extrabold text-white mt-2 mb-4">Оканчивается на -А</h3>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-6">Как и в русском, женский род всегда имеет окончание <strong>-а</strong>.</p>
-                    <div class="space-y-2">
-                        <div class="bg-slate-800/50 p-3 rounded-xl flex justify-between font-bold text-sm md:text-base">
-                            <span>Кућа</span><span class="text-purple-400">Дом</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-3 rounded-xl flex justify-between font-bold text-sm md:text-base">
-                            <span>Кафа</span><span class="text-purple-400">Кофе</span>
-                        </div>
-                    </div>
+                <div class="bento-box p-4 border border-slate-700">
+                    <div class="text-blue-400 font-bold text-sm">Ти (Ты)</div>
+                    <div class="text-3xl font-extrabold text-white mt-1">-Ш</div>
                 </div>
-
-                <!-- Средний -->
-                <div class="bento-box p-6 md:p-8 border-t-4 border-t-pink-500">
-                    <span class="text-pink-400 font-bold uppercase text-xs tracking-wider">Средний род</span>
-                    <h3 class="text-2xl font-extrabold text-white mt-2 mb-4">Оканчивается на -О / -Е</h3>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-6">Слова среднего рода заканчиваются на гласные <strong>-о</strong> или <strong>-е</strong>.</p>
-                    <div class="space-y-2">
-                        <div class="bg-slate-800/50 p-3 rounded-xl flex justify-between font-bold text-sm md:text-base">
-                            <span>Пиво</span><span class="text-pink-400">Пиво</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-3 rounded-xl flex justify-between font-bold text-sm md:text-base">
-                            <span>Море</span><span class="text-pink-400">Море</span>
-                        </div>
-                    </div>
+                <div class="bento-box p-4 border border-slate-700">
+                    <div class="text-blue-400 font-bold text-sm">Он/Она (Он)</div>
+                    <div class="text-2xl font-extrabold text-slate-400 mt-2">нет</div>
+                </div>
+                <div class="bento-box p-4 border border-slate-700">
+                    <div class="text-purple-400 font-bold text-sm">Ми (Мы)</div>
+                    <div class="text-3xl font-extrabold text-white mt-1">-МО</div>
+                </div>
+                <div class="bento-box p-4 border border-slate-700">
+                    <div class="text-purple-400 font-bold text-sm">Ви (Вы)</div>
+                    <div class="text-3xl font-extrabold text-white mt-1">-ТЕ</div>
+                </div>
+                <div class="bento-box p-4 border border-slate-700">
+                    <div class="text-purple-400 font-bold text-sm">Они (Они)</div>
+                    <div class="text-2xl font-extrabold text-white mt-1">-ЈУ / -Е / -У</div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Множественное число -->
+        <!-- 2. Интерактивный тренажер-симулятор спряжения -->
         <section>
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-2">Множественное число</h2>
-                <p class="text-sm md:text-xl text-slate-400">Внимание на гласные окончания!</p>
-            </div>
+            <div class="bento-box max-w-3xl mx-auto border-blue-500/20 bg-blue-950/10">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white">Живой Симулятор Спряжения ⚡</h3>
+                    <p class="text-slate-400 text-sm md:text-base mt-1">Выбери глагол и местоимение, чтобы увидеть форму в реальном времени!</p>
+                </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Мужской мн.ч. -->
-                <div class="glass p-6 md:p-8 rounded-3xl border border-slate-700">
-                    <h3 class="text-xl font-bold text-blue-400 mb-4">Мужской род ➔ <span class="text-white">-И</span></h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Если слово длинное: просто добавляем <strong>-и</strong>.<br>Если слово короткое (1 слог): добавляем суффикс <strong>-ови / -еви</strong>.</p>
-                    <div class="space-y-2">
-                        <div class="bg-slate-900/60 p-3 rounded-xl flex justify-between text-sm md:text-base">
-                            <span>Студент ➔ Студент<strong>и</strong></span>
-                        </div>
-                        <div class="bg-slate-900/60 p-3 rounded-xl flex justify-between text-sm md:text-base">
-                            <span>Град ➔ Град<strong>ови</strong></span>
-                        </div>
+                <!-- Выбор Глагола -->
+                <div class="mb-6">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-3">Шаг 1: Выбери глагол</span>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="selectVerb('читать')" id="verb-читать" class="selector-btn active py-3 rounded-xl font-bold text-xs md:text-base">Читати <span class="block font-normal text-[10px] md:text-xs">(-А группа)</span></button>
+                        <button onclick="selectVerb('говорить')" id="verb-говорить" class="selector-btn py-3 rounded-xl font-bold text-xs md:text-base">Говорити <span class="block font-normal text-[10px] md:text-xs">(-И группа)</span></button>
+                        <button onclick="selectVerb('писать')" id="verb-писать" class="selector-btn py-3 rounded-xl font-bold text-xs md:text-base">Писати <span class="block font-normal text-[10px] md:text-xs">(-Е группа)</span></button>
                     </div>
                 </div>
 
-                <!-- Женский мн.ч. -->
-                <div class="glass p-6 md:p-8 rounded-3xl border border-slate-700">
-                    <h3 class="text-xl font-bold text-purple-400 mb-4">Женский род ➔ <span class="text-white">-Е</span></h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Окончание <strong>-а</strong> меняется на <strong>-е</strong> во множественном числе.</p>
-                    <div class="space-y-2 w-full">
-                        <div class="bg-slate-900/60 p-3 rounded-xl flex justify-between text-sm md:text-base">
-                            <span>Кућа ➔ Кућ<strong>е</strong></span>
-                        </div>
-                        <div class="bg-slate-900/60 p-3 rounded-xl flex justify-between text-sm md:text-base">
-                            <span>Кафа ➔ Каф<strong>е</strong></span>
-                        </div>
+                <!-- Выбор Местоимения -->
+                <div class="mb-8">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-3">Шаг 2: Выбери местоимение</span>
+                    <div class="grid grid-cols-3 md:grid-cols-6 gap-2">
+                        <button onclick="selectPronoun(0)" id="pron-0" class="selector-btn active py-2 rounded-xl font-bold text-sm">Ја (Я)</button>
+                        <button onclick="selectPronoun(1)" id="pron-1" class="selector-btn py-2 rounded-xl font-bold text-sm">Ти (Ты)</button>
+                        <button onclick="selectPronoun(2)" id="pron-2" class="selector-btn py-2 rounded-xl font-bold text-sm">Он/Она</button>
+                        <button onclick="selectPronoun(3)" id="pron-3" class="selector-btn py-2 rounded-xl font-bold text-sm">Ми (Мы)</button>
+                        <button onclick="selectPronoun(4)" id="pron-4" class="selector-btn py-2 rounded-xl font-bold text-sm">Ви (Вы)</button>
+                        <button onclick="selectPronoun(5)" id="pron-5" class="selector-btn py-2 rounded-xl font-bold text-sm">Они</button>
                     </div>
                 </div>
 
-                <!-- Средний мн.ч. -->
-                <div class="glass p-6 md:p-8 rounded-3xl border border-slate-700">
-                    <h3 class="text-xl font-bold text-pink-400 mb-4">Средний род ➔ <span class="text-white">-А</span></h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Окончания <strong>-о / -е</strong> меняются на <strong>-а</strong> (точно так же, как в русском: село — села).</p>
-                    <div class="space-y-2 w-full">
-                        <div class="bg-slate-900/60 p-3 rounded-xl flex justify-between text-sm md:text-base">
-                            <span>Село ➔ Сел<strong>а</strong></span>
-                        </div>
-                        <div class="bg-slate-900/60 p-3 rounded-xl flex justify-between text-sm md:text-base">
-                            <span>Пиво ➔ Пив<strong>а</strong></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Интерактивная Практика: Указательные местоимения -->
-        <section class="mb-8">
-            <div class="bento-box max-w-3xl mx-auto border-emerald-500/20 bg-emerald-950/10">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-white">Интерактивный конструктор</h3>
-                    <p class="text-slate-400 text-sm md:text-base mt-1">Научимся говорить «Это город» / «Это города». Кликай на карточки для переключения!</p>
-                </div>
-
-                <!-- Интерактивная зона -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Единственное число -->
-                    <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-700 flex flex-col justify-between h-48">
-                        <div>
-                            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Ед. Число</span>
-                            <div class="text-3xl font-extrabold text-white mt-2" id="singular-phrase">Ово је град</div>
-                            <p class="text-slate-400 text-sm mt-1" id="singular-trans">Это (есть) город</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="changePhrase('sing', 'град', 'город')" class="btn-tap flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs md:text-sm font-bold">Город</button>
-                            <button onclick="changePhrase('sing', 'кућа', 'дом')" class="btn-tap flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs md:text-sm font-bold">Дом</button>
-                            <button onclick="changePhrase('sing', 'пиво', 'пиво')" class="btn-tap flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs md:text-sm font-bold">Пиво</button>
-                        </div>
-                    </div>
-
-                    <!-- Множественное число -->
-                    <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-700 flex flex-col justify-between h-48">
-                        <div>
-                            <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Мн. Число</span>
-                            <div class="text-3xl font-extrabold text-white mt-2" id="plural-phrase">Ово су градови</div>
-                            <p class="text-slate-400 text-sm mt-1" id="plural-trans">Это (есть) города</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="changePhrase('plur', 'градови', 'города')" class="btn-tap flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs md:text-sm font-bold">Города</button>
-                            <button onclick="changePhrase('plur', 'куће', 'дома')" class="btn-tap flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs md:text-sm font-bold">Дома</button>
-                            <button onclick="changePhrase('plur', 'пива', 'пиво (мн.ч.)')" class="btn-tap flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs md:text-sm font-bold">Пива</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-emerald-950/30 border border-emerald-500/20 rounded-xl p-4 mt-6 text-sm text-slate-300 leading-relaxed text-center">
-                    💡 <strong>Обрати внимание:</strong> в единственном числе используется связка <strong class="text-emerald-400">је</strong> (Ово је...), а во множественном — связка <strong class="text-emerald-400">су</strong> (Ово су...).
+                <!-- Результат симулятора -->
+                <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-700/50 text-center flex flex-col justify-center h-40">
+                    <div class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400" id="result-serbian">Ја читам</div>
+                    <div class="text-lg md:text-xl text-slate-400 mt-2" id="result-russian">Я читаю</div>
                 </div>
             </div>
         </section>
@@ -215,14 +149,55 @@
     </main>
 
     <script>
-        function changePhrase(type, word, trans) {
-            if (type === 'sing') {
-                document.getElementById('singular-phrase').innerHTML = `Ово је <span class="text-blue-400">${word}</span>`;
-                document.getElementById('singular-trans').innerText = `Это (есть) ${trans}`;
-            } else {
-                document.getElementById('plural-phrase').innerHTML = `Ово су <span class="text-purple-400">${word}</span>`;
-                document.getElementById('plural-trans').innerText = `Это (есть) ${trans}`;
+        const conjugations = {
+            'читать': {
+                baseSerb: 'Читати',
+                pronouns: ['Ја', 'Ти', 'Он / Она', 'Ми', 'Ви', 'Они'],
+                serbian: ['читам', 'читаш', 'чита', 'читамо', 'читате', 'читају'],
+                russian: ['читаю', 'читаешь', 'читает', 'читаем', 'читаете', 'читают']
+            },
+            'говорить': {
+                baseSerb: 'Говорити',
+                pronouns: ['Ја', 'Ти', 'Он / Она', 'Ми', 'Ви', 'Они'],
+                serbian: ['говорим', 'говориш', 'говори', 'говоримо', 'говорите', 'говоре'],
+                russian: ['говорю', 'говоришь', 'говорит', 'говорим', 'говорите', 'говорят']
+            },
+            'писать': {
+                baseSerb: 'Писати',
+                pronouns: ['Ја', 'Ти', 'Он / Она', 'Ми', 'Ви', 'Они'],
+                serbian: ['пишем', 'пишеш', 'пише', 'пишемо', 'пишете', 'пишу'],
+                russian: ['пишу', 'пишешь', 'пишет', 'пишем', 'пишете', 'пишут']
             }
+        };
+
+        let activeVerb = 'читать';
+        let activePronounIdx = 0;
+
+        function selectVerb(verb) {
+            activeVerb = verb;
+            document.querySelectorAll('[id^="verb-"]').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`verb-${verb}`).classList.add('active');
+            updateSimulator();
+        }
+
+        function selectPronoun(idx) {
+            activePronounIdx = idx;
+            document.querySelectorAll('[id^="pron-"]').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`pron-${idx}`).classList.add('active');
+            updateSimulator();
+        }
+
+        function updateSimulator() {
+            const data = conjugations[activeVerb];
+            const serbText = `${data.pronouns[activePronounIdx]} <span class="text-emerald-400">${data.serbian[activePronounIdx]}</span>`;
+            const russText = `${data.pronouns[activePronounIdx] === 'Ја' ? 'Я' : 
+                               data.pronouns[activePronounIdx] === 'Ти' ? 'Ты' : 
+                               data.pronouns[activePronounIdx] === 'Он / Она' ? 'Он / Она' : 
+                               data.pronouns[activePronounIdx] === 'Ми' ? 'Мы' : 
+                               data.pronouns[activePronounIdx] === 'Ви' ? 'Вы' : 'Они'} ${data.russian[activePronounIdx]}`;
+            
+            document.getElementById('result-serbian').innerHTML = serbText;
+            document.getElementById('result-russian').innerText = russText;
         }
     </script>
 </body>
